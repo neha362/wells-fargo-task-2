@@ -1,9 +1,10 @@
 package com.wellsfargo.counselor.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Portfolio {
@@ -12,10 +13,10 @@ public class Portfolio {
     @GeneratedValue()
     private long portfolioID;
 
-    @Column(nullable = false)
+    @OneToOne
     private long clientID;
 
-    @Column(nullable = false)
+    @ManyToOne
     private long advisorID;
 
     protected Portfolio() {
